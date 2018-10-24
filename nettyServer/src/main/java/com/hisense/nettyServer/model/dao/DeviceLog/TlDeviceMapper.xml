@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hisense.nettyServer.model.dao.DeviceLog.TlDeviceMapper">
+  <resultMap id="BaseResultMap" type="com.hisense.nettyServer.model.entity.TlDevice">
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="DEVICEID" jdbcType="VARCHAR" property="deviceid" />
+    <result column="EPDEVICEID" jdbcType="VARCHAR" property="epdeviceid" />
+    <result column="RECORD_TIME" jdbcType="TIMESTAMP" property="recordTime" />
+    <result column="IP_ADDRESS" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="CPU_TEMP" jdbcType="DECIMAL" property="cpuTemp" />
+    <result column="CPU_FAN_SPEED" jdbcType="DECIMAL" property="cpuFanSpeed" />
+    <result column="FREE_MEMORY" jdbcType="VARCHAR" property="freeMemory" />
+    <result column="THREAD_COUNT" jdbcType="DECIMAL" property="threadCount" />
+    <result column="DISK_SPACE" jdbcType="VARCHAR" property="diskSpace" />
+    <result column="NONUPLOADNUM" jdbcType="DECIMAL" property="nonuploadnum" />
+    <result column="CAMID" jdbcType="VARCHAR" property="camid" />
+    <result column="CAMERA_STATE" jdbcType="VARCHAR" property="cameraState" />
+    <result column="CAMERA_STATE_DES" jdbcType="VARCHAR" property="cameraStateDes" />
+    <result column="VIDEOID" jdbcType="VARCHAR" property="videoid" />
+    <result column="VIDEO_STATE" jdbcType="VARCHAR" property="videoState" />
+    <result column="VIDEO_STATE_DES" jdbcType="VARCHAR" property="videoStateDes" />
+    <result column="TRIGGERID" jdbcType="VARCHAR" property="triggerid" />
+    <result column="TRIGGER_STATE" jdbcType="VARCHAR" property="triggerState" />
+    <result column="TRIGGER_STATE_DES" jdbcType="VARCHAR" property="triggerStateDes" />
+    <result column="LIGHTID" jdbcType="VARCHAR" property="lightid" />
+    <result column="LIGHT_STATE" jdbcType="VARCHAR" property="lightState" />
+    <result column="LIGHT_STATE_DES" jdbcType="VARCHAR" property="lightStateDes" />
+    <result column="IS_NORMAL" jdbcType="VARCHAR" property="isNormal" />
+    <result column="FILE_SIZE" jdbcType="DECIMAL" property="fileSize" />
+    <result column="FILE_CREATETIME" jdbcType="TIMESTAMP" property="fileCreatetime" />
+    <result column="FILE_ANALYSE_TIME" jdbcType="TIMESTAMP" property="fileAnalyseTime" />
+    <result column="SERVERIP" jdbcType="VARCHAR" property="serverip" />
+    <result column="NOTE" jdbcType="VARCHAR" property="note" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hisense.nettyServer.model.entity.TlDevice">
+    insert into TL_DEVICE (FILE_NAME, DEVICEID, EPDEVICEID, 
+      RECORD_TIME, IP_ADDRESS, CPU_TEMP, 
+      CPU_FAN_SPEED, FREE_MEMORY, THREAD_COUNT, 
+      DISK_SPACE, NONUPLOADNUM, CAMID, 
+      CAMERA_STATE, CAMERA_STATE_DES, VIDEOID, 
+      VIDEO_STATE, VIDEO_STATE_DES, TRIGGERID, 
+      TRIGGER_STATE, TRIGGER_STATE_DES, LIGHTID, 
+      LIGHT_STATE, LIGHT_STATE_DES, IS_NORMAL, 
+      FILE_SIZE, FILE_CREATETIME, FILE_ANALYSE_TIME, 
+      SERVERIP, NOTE)
+    values (#{fileName,jdbcType=VARCHAR}, #{deviceid,jdbcType=VARCHAR}, #{epdeviceid,jdbcType=VARCHAR}, 
+      #{recordTime,jdbcType=TIMESTAMP}, #{ipAddress,jdbcType=VARCHAR}, #{cpuTemp,jdbcType=DECIMAL}, 
+      #{cpuFanSpeed,jdbcType=DECIMAL}, #{freeMemory,jdbcType=VARCHAR}, #{threadCount,jdbcType=DECIMAL}, 
+      #{diskSpace,jdbcType=VARCHAR}, #{nonuploadnum,jdbcType=DECIMAL}, #{camid,jdbcType=VARCHAR}, 
+      #{cameraState,jdbcType=VARCHAR}, #{cameraStateDes,jdbcType=VARCHAR}, #{videoid,jdbcType=VARCHAR}, 
+      #{videoState,jdbcType=VARCHAR}, #{videoStateDes,jdbcType=VARCHAR}, #{triggerid,jdbcType=VARCHAR}, 
+      #{triggerState,jdbcType=VARCHAR}, #{triggerStateDes,jdbcType=VARCHAR}, #{lightid,jdbcType=VARCHAR}, 
+      #{lightState,jdbcType=VARCHAR}, #{lightStateDes,jdbcType=VARCHAR}, #{isNormal,jdbcType=VARCHAR}, 
+      #{fileSize,jdbcType=DECIMAL}, #{fileCreatetime,jdbcType=TIMESTAMP}, #{fileAnalyseTime,jdbcType=TIMESTAMP}, 
+      #{serverip,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hisense.nettyServer.model.entity.TlDevice">
+    insert into TL_DEVICE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fileName != null">
+        FILE_NAME,
+      </if>
+      <if test="deviceid != null">
+        DEVICEID,
+      </if>
+      <if test="epdeviceid != null">
+        EPDEVICEID,
+      </if>
+      <if test="recordTime != null">
+        RECORD_TIME,
+      </if>
+      <if test="ipAddress != null">
+        IP_ADDRESS,
+      </if>
+      <if test="cpuTemp != null">
+        CPU_TEMP,
+      </if>
+      <if test="cpuFanSpeed != null">
+        CPU_FAN_SPEED,
+      </if>
+      <if test="freeMemory != null">
+        FREE_MEMORY,
+      </if>
+      <if test="threadCount != null">
+        THREAD_COUNT,
+      </if>
+      <if test="diskSpace != null">
+        DISK_SPACE,
+      </if>
+      <if test="nonuploadnum != null">
+        NONUPLOADNUM,
+      </if>
+      <if test="camid != null">
+        CAMID,
+      </if>
+      <if test="cameraState != null">
+        CAMERA_STATE,
+      </if>
+      <if test="cameraStateDes != null">
+        CAMERA_STATE_DES,
+      </if>
+      <if test="videoid != null">
+        VIDEOID,
+      </if>
+      <if test="videoState != null">
+        VIDEO_STATE,
+      </if>
+      <if test="videoStateDes != null">
+        VIDEO_STATE_DES,
+      </if>
+      <if test="triggerid != null">
+        TRIGGERID,
+      </if>
+      <if test="triggerState != null">
+        TRIGGER_STATE,
+      </if>
+      <if test="triggerStateDes != null">
+        TRIGGER_STATE_DES,
+      </if>
+      <if test="lightid != null">
+        LIGHTID,
+      </if>
+      <if test="lightState != null">
+        LIGHT_STATE,
+      </if>
+      <if test="lightStateDes != null">
+        LIGHT_STATE_DES,
+      </if>
+      <if test="isNormal != null">
+        IS_NORMAL,
+      </if>
+      <if test="fileSize != null">
+        FILE_SIZE,
+      </if>
+      <if test="fileCreatetime != null">
+        FILE_CREATETIME,
+      </if>
+      <if test="fileAnalyseTime != null">
+        FILE_ANALYSE_TIME,
+      </if>
+      <if test="serverip != null">
+        SERVERIP,
+      </if>
+      <if test="note != null">
+        NOTE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceid != null">
+        #{deviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="epdeviceid != null">
+        #{epdeviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="recordTime != null">
+        #{recordTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ipAddress != null">
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cpuTemp != null">
+        #{cpuTemp,jdbcType=DECIMAL},
+      </if>
+      <if test="cpuFanSpeed != null">
+        #{cpuFanSpeed,jdbcType=DECIMAL},
+      </if>
+      <if test="freeMemory != null">
+        #{freeMemory,jdbcType=VARCHAR},
+      </if>
+      <if test="threadCount != null">
+        #{threadCount,jdbcType=DECIMAL},
+      </if>
+      <if test="diskSpace != null">
+        #{diskSpace,jdbcType=VARCHAR},
+      </if>
+      <if test="nonuploadnum != null">
+        #{nonuploadnum,jdbcType=DECIMAL},
+      </if>
+      <if test="camid != null">
+        #{camid,jdbcType=VARCHAR},
+      </if>
+      <if test="cameraState != null">
+        #{cameraState,jdbcType=VARCHAR},
+      </if>
+      <if test="cameraStateDes != null">
+        #{cameraStateDes,jdbcType=VARCHAR},
+      </if>
+      <if test="videoid != null">
+        #{videoid,jdbcType=VARCHAR},
+      </if>
+      <if test="videoState != null">
+        #{videoState,jdbcType=VARCHAR},
+      </if>
+      <if test="videoStateDes != null">
+        #{videoStateDes,jdbcType=VARCHAR},
+      </if>
+      <if test="triggerid != null">
+        #{triggerid,jdbcType=VARCHAR},
+      </if>
+      <if test="triggerState != null">
+        #{triggerState,jdbcType=VARCHAR},
+      </if>
+      <if test="triggerStateDes != null">
+        #{triggerStateDes,jdbcType=VARCHAR},
+      </if>
+      <if test="lightid != null">
+        #{lightid,jdbcType=VARCHAR},
+      </if>
+      <if test="lightState != null">
+        #{lightState,jdbcType=VARCHAR},
+      </if>
+      <if test="lightStateDes != null">
+        #{lightStateDes,jdbcType=VARCHAR},
+      </if>
+      <if test="isNormal != null">
+        #{isNormal,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        #{fileSize,jdbcType=DECIMAL},
+      </if>
+      <if test="fileCreatetime != null">
+        #{fileCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fileAnalyseTime != null">
+        #{fileAnalyseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serverip != null">
+        #{serverip,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

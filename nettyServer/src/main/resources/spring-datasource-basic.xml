@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		  http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		  http://www.springframework.org/schema/context
+		  http://www.springframework.org/schema/context/spring-context-4.1.xsd">  
+		  
+    <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
+    
+    <bean id="basicDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+        init-method="init" destroy-method="close">
+
+        <!-- 数据库基本信息配置 -->
+        <property name="driverClassName" value="${basic.jdbc.driverClassName}" />
+        <property name="url" value="${basic.jdbc.jdbcUrl}" />
+        <property name="username" value="${basic.jdbc.username}" />
+        <property name="password" value="${basic.jdbc.password}" />
+        
+        <!-- 初始化连接数量 -->
+        <property name="initialSize" value="50" />
+        <!-- 最大并发连接数 -->
+        <property name="maxActive" value="1000" />
+        <!-- 连接池最小空闲 -->  
+        <property name="minIdle" value="1" />  
+        <!-- 配置获取连接等待超时的时间,单位毫秒 -->     
+        <property name="maxWait" value="60000" />
+        
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="true" />     
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="50" />
+        
+        <property name="defaultAutoCommit" value="true" />
+        
+        <!-- 申请连接的时候检测 -->
+        <property name="testWhileIdle" value="true" />
+        <!-- 申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能 -->
+        <property name="testOnBorrow" value="false" />
+        <!-- 归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能  -->
+        <property name="testOnReturn" value="false" />
+        
+        <!-- 超过时间限制是否回收 -->
+        <property name="removeAbandoned" value="true" />
+        <!-- 超过时间限制多长,单位秒  -->
+        <property name="removeAbandonedTimeout" value="60" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="3600000" />
+        
+        <!-- 监控数据库 --> 
+        <property name="filters" value="stat" />  
+    </bean>
+    
+    <bean id="basicSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="basicDataSource" />
+        <property name="configLocation" value="classpath:mybatis.xml"></property>
+        <property name="mapperLocations">
+			<list>
+				<value>classpath:com/hisense/nettyServer/model/dao/*Mapper.xml</value>
+			</list>
+		</property>
+    </bean>
+    
+    <!-- 自动扫描Mapper接口,并实现其功能  -->
+	<bean name="basicMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="basicSqlSessionFactory" />
+		<property name="basePackage" value="com.hisense.nettyServer.model.dao" />
+	</bean>
+  
+</beans>  

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1）在调试的过程中，可以将配置文件中，configuration标签(<configuration status="debug" monitorInterval="30">)中的status设置为debug，这样用户可以在Eclipse的console看到Log4j2启动和加载配置文件时的打印信息。 -->
+<!-- 2）configuration标签(<configuration status="debug" monitorInterval="30">)中的monitorInterval是用来设置配置文件的动态加载时间的，单位是秒。monitorInterval="30"表示每30秒配置文件会动态加载一次。在程序运行过程中，如果修改配置文件，程序会随之改变。 -->
+<Configuration status="WARN" monitorInterval="60">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] %c{1} [%thread] [%file:%line] - %msg%n" />
+		</Console>
+		<!-- F://logs/nettyServerAdapter.log -->
+		<RollingFile name="ErrorLog" fileName="/qiushuai/tomcat8.5-nettyServer/logs/error/nettyServerAdapter.log"
+			filePattern="/qiushuai/tomcat8.5-nettyServer/logs/error/nettyServerAdapter.%d{yyyy-MM-dd}.log" append="true">
+			<ThresholdFilter level="error" onMatch="ACCEPT"
+				onMismatch="DENY" />
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] %c{1} [%thread] [%file:%line] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console" /> <!-- Root Logger的Appender引用上面定义的Console -->
+		</Root>
+		<Logger name="errorLog" level="error" additivity="false"> <!-- 定义名字为HelloWorld的Logger，其日志级别为info，additivity为false -->
+			<AppenderRef ref="ErrorLog" />
+			<AppenderRef ref="Console" />
+		</Logger>
+	</Loggers>
+</Configuration>

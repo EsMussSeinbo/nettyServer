@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hisense.nettyServer.model.dao.TrafficAccident.TdTrafficeventvideoMapper">
+  <resultMap id="BaseResultMap" type="com.hisense.nettyServer.model.entity.TdTrafficeventvideo">
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="EVENTID" jdbcType="VARCHAR" property="eventid" />
+    <result column="VIDEONAME" jdbcType="VARCHAR" property="videoname" />
+    <result column="VIDEOPATH" jdbcType="VARCHAR" property="videopath" />
+    <result column="VIDEOSTARTTIME" jdbcType="OTHER" property="videostarttime" />
+    <result column="VIDEOENDTIME" jdbcType="OTHER" property="videoendtime" />
+    <result column="INSERTTIME" jdbcType="TIMESTAMP" property="inserttime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hisense.nettyServer.model.entity.TdTrafficeventvideo">
+    insert into TD_TRAFFICEVENTVIDEO (ID, EVENTID, VIDEONAME, 
+      VIDEOPATH, VIDEOSTARTTIME, VIDEOENDTIME, 
+      INSERTTIME)
+    values (#{id,jdbcType=VARCHAR}, #{eventid,jdbcType=VARCHAR}, #{videoname,jdbcType=VARCHAR}, 
+      #{videopath,jdbcType=VARCHAR}, #{videostarttime,jdbcType=OTHER}, #{videoendtime,jdbcType=OTHER}, 
+      #{inserttime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hisense.nettyServer.model.entity.TdTrafficeventvideo">
+    insert into TD_TRAFFICEVENTVIDEO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="eventid != null">
+        EVENTID,
+      </if>
+      <if test="videoname != null">
+        VIDEONAME,
+      </if>
+      <if test="videopath != null">
+        VIDEOPATH,
+      </if>
+      <if test="videostarttime != null">
+        VIDEOSTARTTIME,
+      </if>
+      <if test="videoendtime != null">
+        VIDEOENDTIME,
+      </if>
+      <if test="inserttime != null">
+        INSERTTIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="eventid != null">
+        #{eventid,jdbcType=VARCHAR},
+      </if>
+      <if test="videoname != null">
+        #{videoname,jdbcType=VARCHAR},
+      </if>
+      <if test="videopath != null">
+        #{videopath,jdbcType=VARCHAR},
+      </if>
+      <if test="videostarttime != null">
+        #{videostarttime,jdbcType=OTHER},
+      </if>
+      <if test="videoendtime != null">
+        #{videoendtime,jdbcType=OTHER},
+      </if>
+      <if test="inserttime != null">
+        #{inserttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

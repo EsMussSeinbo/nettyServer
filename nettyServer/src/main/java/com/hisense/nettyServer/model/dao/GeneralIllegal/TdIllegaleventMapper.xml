@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hisense.nettyServer.model.dao.GeneralIllegal.TdIllegaleventMapper">
+  <resultMap id="BaseResultMap" type="com.hisense.nettyServer.model.entity.TdIllegalevent">
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DEVICEID" jdbcType="VARCHAR" property="deviceid" />
+    <result column="DEVICEPOS" jdbcType="VARCHAR" property="devicepos" />
+    <result column="LANENO" jdbcType="DECIMAL" property="laneno" />
+    <result column="EVENTTYPE" jdbcType="VARCHAR" property="eventtype" />
+    <result column="EVENTTIME" jdbcType="OTHER" property="eventtime" />
+    <result column="PLATENO" jdbcType="VARCHAR" property="plateno" />
+    <result column="PLATETYPE" jdbcType="VARCHAR" property="platetype" />
+    <result column="PLATECOLOR" jdbcType="VARCHAR" property="platecolor" />
+    <result column="VEHICLETYPE" jdbcType="VARCHAR" property="vehicletype" />
+    <result column="VEHICLELOGO" jdbcType="VARCHAR" property="vehiclelogo" />
+    <result column="CONFIDENCE" jdbcType="DECIMAL" property="confidence" />
+    <result column="DIRECTION" jdbcType="VARCHAR" property="direction" />
+    <result column="SPEED" jdbcType="DECIMAL" property="speed" />
+    <result column="RLONTIME" jdbcType="TIMESTAMP" property="rlontime" />
+    <result column="RLOFFTIME" jdbcType="TIMESTAMP" property="rlofftime" />
+    <result column="PICCOUNT" jdbcType="DECIMAL" property="piccount" />
+    <result column="ISVALID" jdbcType="VARCHAR" property="isvalid" />
+    <result column="INSERTTIME" jdbcType="TIMESTAMP" property="inserttime" />
+    <result column="ILLEGALID" jdbcType="VARCHAR" property="illegalid" />
+    <result column="POLICEDEVID" jdbcType="VARCHAR" property="policedevid" />
+    <result column="VEHICLECOLOR" jdbcType="VARCHAR" property="vehiclecolor" />
+    <result column="VEHICLECLASS" jdbcType="VARCHAR" property="vehicleclass" />
+    <result column="LIMITSPEED" jdbcType="DECIMAL" property="limitspeed" />
+    <result column="MAXLIMITSPEED" jdbcType="DECIMAL" property="maxlimitspeed" />
+    <result column="VEHNEWENERG" jdbcType="VARCHAR" property="vehnewenerg" />
+    <result column="BIGPLATENO" jdbcType="VARCHAR" property="bigplateno" />
+    <result column="IS_AUDIT" jdbcType="VARCHAR" property="isAudit" />
+    <result column="DATASOURCE" jdbcType="VARCHAR" property="datasource" />
+    <result column="CLASSIFICATION" jdbcType="VARCHAR" property="classification" />
+    <result column="PICURL1" jdbcType="VARCHAR" property="picurl1" />
+    <result column="PICNAME1" jdbcType="VARCHAR" property="picname1" />
+    <result column="PICTIME1" jdbcType="TIMESTAMP" property="pictime1" />
+    <result column="PICURL2" jdbcType="VARCHAR" property="picurl2" />
+    <result column="PICNAME2" jdbcType="VARCHAR" property="picname2" />
+    <result column="PICTIME2" jdbcType="TIMESTAMP" property="pictime2" />
+    <result column="PICURL3" jdbcType="VARCHAR" property="picurl3" />
+    <result column="PICNAME3" jdbcType="VARCHAR" property="picname3" />
+    <result column="PICTIME3" jdbcType="TIMESTAMP" property="pictime3" />
+    <result column="PICURL4" jdbcType="VARCHAR" property="picurl4" />
+    <result column="PICNAME4" jdbcType="VARCHAR" property="picname4" />
+    <result column="PICTIME4" jdbcType="TIMESTAMP" property="pictime4" />
+    <result column="VIDEOURL" jdbcType="VARCHAR" property="videourl" />
+    <result column="AUDIOURL" jdbcType="VARCHAR" property="audiourl" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hisense.nettyServer.model.entity.TdIllegalevent">
+    insert into "TD_ILLEGALEVENT" (ID, DEVICEID, DEVICEPOS, 
+      LANENO, EVENTTYPE, EVENTTIME, 
+      PLATENO, PLATETYPE, PLATECOLOR, 
+      VEHICLETYPE, VEHICLELOGO, CONFIDENCE, 
+      DIRECTION, SPEED, RLONTIME, 
+      RLOFFTIME, PICCOUNT, ISVALID, 
+      INSERTTIME, ILLEGALID, POLICEDEVID, 
+      VEHICLECOLOR, VEHICLECLASS, LIMITSPEED, 
+      MAXLIMITSPEED, VEHNEWENERG, BIGPLATENO, 
+      IS_AUDIT, DATASOURCE, CLASSIFICATION, 
+      PICURL1, PICNAME1, PICTIME1, 
+      PICURL2, PICNAME2, PICTIME2, 
+      PICURL3, PICNAME3, PICTIME3, 
+      PICURL4, PICNAME4, PICTIME4, 
+      VIDEOURL, AUDIOURL)
+    values (#{id,jdbcType=VARCHAR}, #{deviceid,jdbcType=VARCHAR}, #{devicepos,jdbcType=VARCHAR}, 
+      #{laneno,jdbcType=DECIMAL}, #{eventtype,jdbcType=VARCHAR}, #{eventtime,jdbcType=OTHER}, 
+      #{plateno,jdbcType=VARCHAR}, #{platetype,jdbcType=VARCHAR}, #{platecolor,jdbcType=VARCHAR}, 
+      #{vehicletype,jdbcType=VARCHAR}, #{vehiclelogo,jdbcType=VARCHAR}, #{confidence,jdbcType=DECIMAL}, 
+      #{direction,jdbcType=VARCHAR}, #{speed,jdbcType=DECIMAL}, #{rlontime,jdbcType=TIMESTAMP}, 
+      #{rlofftime,jdbcType=TIMESTAMP}, #{piccount,jdbcType=DECIMAL}, #{isvalid,jdbcType=VARCHAR}, 
+      #{inserttime,jdbcType=TIMESTAMP}, #{illegalid,jdbcType=VARCHAR}, #{policedevid,jdbcType=VARCHAR}, 
+      #{vehiclecolor,jdbcType=VARCHAR}, #{vehicleclass,jdbcType=VARCHAR}, #{limitspeed,jdbcType=DECIMAL}, 
+      #{maxlimitspeed,jdbcType=DECIMAL}, #{vehnewenerg,jdbcType=VARCHAR}, #{bigplateno,jdbcType=VARCHAR}, 
+      #{isAudit,jdbcType=VARCHAR}, #{datasource,jdbcType=VARCHAR}, #{classification,jdbcType=VARCHAR}, 
+      #{picurl1,jdbcType=VARCHAR}, #{picname1,jdbcType=VARCHAR}, #{pictime1,jdbcType=TIMESTAMP}, 
+      #{picurl2,jdbcType=VARCHAR}, #{picname2,jdbcType=VARCHAR}, #{pictime2,jdbcType=TIMESTAMP}, 
+      #{picurl3,jdbcType=VARCHAR}, #{picname3,jdbcType=VARCHAR}, #{pictime3,jdbcType=TIMESTAMP}, 
+      #{picurl4,jdbcType=VARCHAR}, #{picname4,jdbcType=VARCHAR}, #{pictime4,jdbcType=TIMESTAMP}, 
+      #{videourl,jdbcType=VARCHAR}, #{audiourl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hisense.nettyServer.model.entity.TdIllegalevent">
+    insert into "TD_ILLEGALEVENT"
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="deviceid != null">
+        DEVICEID,
+      </if>
+      <if test="devicepos != null">
+        DEVICEPOS,
+      </if>
+      <if test="laneno != null">
+        LANENO,
+      </if>
+      <if test="eventtype != null">
+        EVENTTYPE,
+      </if>
+      <if test="eventtime != null">
+        EVENTTIME,
+      </if>
+      <if test="plateno != null">
+        PLATENO,
+      </if>
+      <if test="platetype != null">
+        PLATETYPE,
+      </if>
+      <if test="platecolor != null">
+        PLATECOLOR,
+      </if>
+      <if test="vehicletype != null">
+        VEHICLETYPE,
+      </if>
+      <if test="vehiclelogo != null">
+        VEHICLELOGO,
+      </if>
+      <if test="confidence != null">
+        CONFIDENCE,
+      </if>
+      <if test="direction != null">
+        DIRECTION,
+      </if>
+      <if test="speed != null">
+        SPEED,
+      </if>
+      <if test="rlontime != null">
+        RLONTIME,
+      </if>
+      <if test="rlofftime != null">
+        RLOFFTIME,
+      </if>
+      <if test="piccount != null">
+        PICCOUNT,
+      </if>
+      <if test="isvalid != null">
+        ISVALID,
+      </if>
+      <if test="inserttime != null">
+        INSERTTIME,
+      </if>
+      <if test="illegalid != null">
+        ILLEGALID,
+      </if>
+      <if test="policedevid != null">
+        POLICEDEVID,
+      </if>
+      <if test="vehiclecolor != null">
+        VEHICLECOLOR,
+      </if>
+      <if test="vehicleclass != null">
+        VEHICLECLASS,
+      </if>
+      <if test="limitspeed != null">
+        LIMITSPEED,
+      </if>
+      <if test="maxlimitspeed != null">
+        MAXLIMITSPEED,
+      </if>
+      <if test="vehnewenerg != null">
+        VEHNEWENERG,
+      </if>
+      <if test="bigplateno != null">
+        BIGPLATENO,
+      </if>
+      <if test="isAudit != null">
+        IS_AUDIT,
+      </if>
+      <if test="datasource != null">
+        DATASOURCE,
+      </if>
+      <if test="classification != null">
+        CLASSIFICATION,
+      </if>
+      <if test="picurl1 != null">
+        PICURL1,
+      </if>
+      <if test="picname1 != null">
+        PICNAME1,
+      </if>
+      <if test="pictime1 != null">
+        PICTIME1,
+      </if>
+      <if test="picurl2 != null">
+        PICURL2,
+      </if>
+      <if test="picname2 != null">
+        PICNAME2,
+      </if>
+      <if test="pictime2 != null">
+        PICTIME2,
+      </if>
+      <if test="picurl3 != null">
+        PICURL3,
+      </if>
+      <if test="picname3 != null">
+        PICNAME3,
+      </if>
+      <if test="pictime3 != null">
+        PICTIME3,
+      </if>
+      <if test="picurl4 != null">
+        PICURL4,
+      </if>
+      <if test="picname4 != null">
+        PICNAME4,
+      </if>
+      <if test="pictime4 != null">
+        PICTIME4,
+      </if>
+      <if test="videourl != null">
+        VIDEOURL,
+      </if>
+      <if test="audiourl != null">
+        AUDIOURL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceid != null">
+        #{deviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="devicepos != null">
+        #{devicepos,jdbcType=VARCHAR},
+      </if>
+      <if test="laneno != null">
+        #{laneno,jdbcType=DECIMAL},
+      </if>
+      <if test="eventtype != null">
+        #{eventtype,jdbcType=VARCHAR},
+      </if>
+      <if test="eventtime != null">
+        #{eventtime,jdbcType=OTHER},
+      </if>
+      <if test="plateno != null">
+        #{plateno,jdbcType=VARCHAR},
+      </if>
+      <if test="platetype != null">
+        #{platetype,jdbcType=VARCHAR},
+      </if>
+      <if test="platecolor != null">
+        #{platecolor,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicletype != null">
+        #{vehicletype,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclelogo != null">
+        #{vehiclelogo,jdbcType=VARCHAR},
+      </if>
+      <if test="confidence != null">
+        #{confidence,jdbcType=DECIMAL},
+      </if>
+      <if test="direction != null">
+        #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="speed != null">
+        #{speed,jdbcType=DECIMAL},
+      </if>
+      <if test="rlontime != null">
+        #{rlontime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rlofftime != null">
+        #{rlofftime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="piccount != null">
+        #{piccount,jdbcType=DECIMAL},
+      </if>
+      <if test="isvalid != null">
+        #{isvalid,jdbcType=VARCHAR},
+      </if>
+      <if test="inserttime != null">
+        #{inserttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="illegalid != null">
+        #{illegalid,jdbcType=VARCHAR},
+      </if>
+      <if test="policedevid != null">
+        #{policedevid,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclecolor != null">
+        #{vehiclecolor,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleclass != null">
+        #{vehicleclass,jdbcType=VARCHAR},
+      </if>
+      <if test="limitspeed != null">
+        #{limitspeed,jdbcType=DECIMAL},
+      </if>
+      <if test="maxlimitspeed != null">
+        #{maxlimitspeed,jdbcType=DECIMAL},
+      </if>
+      <if test="vehnewenerg != null">
+        #{vehnewenerg,jdbcType=VARCHAR},
+      </if>
+      <if test="bigplateno != null">
+        #{bigplateno,jdbcType=VARCHAR},
+      </if>
+      <if test="isAudit != null">
+        #{isAudit,jdbcType=VARCHAR},
+      </if>
+      <if test="datasource != null">
+        #{datasource,jdbcType=VARCHAR},
+      </if>
+      <if test="classification != null">
+        #{classification,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl1 != null">
+        #{picurl1,jdbcType=VARCHAR},
+      </if>
+      <if test="picname1 != null">
+        #{picname1,jdbcType=VARCHAR},
+      </if>
+      <if test="pictime1 != null">
+        #{pictime1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="picurl2 != null">
+        #{picurl2,jdbcType=VARCHAR},
+      </if>
+      <if test="picname2 != null">
+        #{picname2,jdbcType=VARCHAR},
+      </if>
+      <if test="pictime2 != null">
+        #{pictime2,jdbcType=TIMESTAMP},
+      </if>
+      <if test="picurl3 != null">
+        #{picurl3,jdbcType=VARCHAR},
+      </if>
+      <if test="picname3 != null">
+        #{picname3,jdbcType=VARCHAR},
+      </if>
+      <if test="pictime3 != null">
+        #{pictime3,jdbcType=TIMESTAMP},
+      </if>
+      <if test="picurl4 != null">
+        #{picurl4,jdbcType=VARCHAR},
+      </if>
+      <if test="picname4 != null">
+        #{picname4,jdbcType=VARCHAR},
+      </if>
+      <if test="pictime4 != null">
+        #{pictime4,jdbcType=TIMESTAMP},
+      </if>
+      <if test="videourl != null">
+        #{videourl,jdbcType=VARCHAR},
+      </if>
+      <if test="audiourl != null">
+        #{audiourl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

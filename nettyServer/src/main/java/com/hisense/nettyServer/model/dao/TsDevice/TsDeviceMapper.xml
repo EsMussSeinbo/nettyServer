@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hisense.nettyServer.model.dao.TsDevice.TsDeviceMapper">
+  <resultMap id="BaseResultMap" type="com.hisense.nettyServer.model.entity.TsDevice">
+    <id column="DEVICEID" jdbcType="VARCHAR" property="deviceid" />
+    <result column="DEVICETYPE" jdbcType="VARCHAR" property="devicetype" />
+    <result column="DEVICENAME" jdbcType="VARCHAR" property="devicename" />
+    <result column="ORGTYPE" jdbcType="VARCHAR" property="orgtype" />
+    <result column="ORGID" jdbcType="VARCHAR" property="orgid" />
+    <result column="AREAID" jdbcType="VARCHAR" property="areaid" />
+    <result column="ROADID" jdbcType="VARCHAR" property="roadid" />
+    <result column="STAKENUM" jdbcType="VARCHAR" property="stakenum" />
+    <result column="DEVICEPOS" jdbcType="VARCHAR" property="devicepos" />
+    <result column="LONGITUDE" jdbcType="VARCHAR" property="longitude" />
+    <result column="LATITUDE" jdbcType="VARCHAR" property="latitude" />
+    <result column="DIRECTION" jdbcType="VARCHAR" property="direction" />
+    <result column="MASTERIP" jdbcType="VARCHAR" property="masterip" />
+    <result column="INTERFACEIP" jdbcType="VARCHAR" property="interfaceip" />
+    <result column="DEVICEIP" jdbcType="VARCHAR" property="deviceip" />
+    <result column="SHAFTSTAKENUM" jdbcType="VARCHAR" property="shaftstakenum" />
+    <result column="SHAFTNAME" jdbcType="VARCHAR" property="shaftname" />
+    <result column="DEVICECOMPANY" jdbcType="VARCHAR" property="devicecompany" />
+    <result column="QUEUELENGTHTHRESHOLD" jdbcType="DECIMAL" property="queuelengththreshold" />
+    <result column="STOPTIMETHRESHOLD" jdbcType="DECIMAL" property="stoptimethreshold" />
+    <result column="LOWSPEEDTHRESHOLD" jdbcType="DECIMAL" property="lowspeedthreshold" />
+    <result column="TMINTERVAL" jdbcType="DECIMAL" property="tminterval" />
+    <result column="DEVICELOGINTERVAL" jdbcType="DECIMAL" property="deviceloginterval" />
+    <result column="SYSLOGINTERVAL" jdbcType="DECIMAL" property="sysloginterval" />
+    <result column="STATE" jdbcType="DECIMAL" property="state" />
+    <result column="NOTE" jdbcType="VARCHAR" property="note" />
+    <result column="DEVICEMODEL" jdbcType="VARCHAR" property="devicemodel" />
+    <result column="DEVICESOURCE" jdbcType="VARCHAR" property="devicesource" />
+    <result column="OPERATETIME" jdbcType="TIMESTAMP" property="operatetime" />
+    <result column="OPERATOR" jdbcType="VARCHAR" property="operator" />
+    <result column="WATERMARKNAME" jdbcType="VARCHAR" property="watermarkname" />
+    <result column="GISADDRESS" jdbcType="VARCHAR" property="gisaddress" />
+    <result column="POSHEIGHT" jdbcType="DECIMAL" property="posheight" />
+    <result column="HORIZONTALANGLE" jdbcType="DECIMAL" property="horizontalangle" />
+    <result column="CABRAGEANGLE" jdbcType="DECIMAL" property="cabrageangle" />
+    <result column="LANENUM" jdbcType="DECIMAL" property="lanenum" />
+    <result column="COVERAGEAREA" jdbcType="VARCHAR" property="coveragearea" />
+    <result column="GATEWAYS" jdbcType="VARCHAR" property="gateways" />
+    <result column="DEVICEMAC" jdbcType="VARCHAR" property="devicemac" />
+    <result column="LIGHTNUM" jdbcType="DECIMAL" property="lightnum" />
+    <result column="DRIVINGDIRECTION" jdbcType="VARCHAR" property="drivingdirection" />
+    <result column="UPSHAFTSTAKE" jdbcType="VARCHAR" property="upshaftstake" />
+    <result column="UPSHAFTDIS" jdbcType="DECIMAL" property="upshaftdis" />
+    <result column="UPJUNCNAME" jdbcType="VARCHAR" property="upjuncname" />
+    <result column="UPJUNCDIS" jdbcType="DECIMAL" property="upjuncdis" />
+    <result column="DOWNSHAFTSTAKE" jdbcType="VARCHAR" property="downshaftstake" />
+    <result column="DOWNSHAFTDIS" jdbcType="DECIMAL" property="downshaftdis" />
+    <result column="DOWNJUNCNAME" jdbcType="VARCHAR" property="downjuncname" />
+    <result column="DOWNJUNCDIS" jdbcType="DECIMAL" property="downjuncdis" />
+    <result column="BUILDSTATE" jdbcType="VARCHAR" property="buildstate" />
+    <result column="CONVERGEBOX" jdbcType="VARCHAR" property="convergebox" />
+    <result column="CONVERGETIME" jdbcType="TIMESTAMP" property="convergetime" />
+    <result column="DEVICETRANSTIME" jdbcType="TIMESTAMP" property="devicetranstime" />
+    <result column="DEVICEREMOVETIME" jdbcType="TIMESTAMP" property="deviceremovetime" />
+    <result column="CONSTRUCTIONUNIT" jdbcType="VARCHAR" property="constructionunit" />
+    <result column="POLICEDEVID" jdbcType="VARCHAR" property="policedevid" />
+    <result column="OBJNAME" jdbcType="VARCHAR" property="objname" />
+    <result column="FTPPORT" jdbcType="DECIMAL" property="ftpport" />
+    <result column="FTPUSER" jdbcType="VARCHAR" property="ftpuser" />
+    <result column="FTPPASSWORD" jdbcType="VARCHAR" property="ftppassword" />
+    <result column="POSPIC1" jdbcType="VARCHAR" property="pospic1" />
+    <result column="CHECKPIC" jdbcType="VARCHAR" property="checkpic" />
+    <result column="DEVICERESOLUTION" jdbcType="VARCHAR" property="deviceresolution" />
+    <result column="DEVICENUM" jdbcType="DECIMAL" property="devicenum" />
+    <result column="DEVICEORIENTATION" jdbcType="VARCHAR" property="deviceorientation" />
+    <result column="DEVICEAREA" jdbcType="VARCHAR" property="devicearea" />
+    <result column="REGION" jdbcType="VARCHAR" property="region" />
+    <result column="POSPIC2" jdbcType="VARCHAR" property="pospic2" />
+    <result column="ATTACHMENT" jdbcType="VARCHAR" property="attachment" />
+    <result column="DESIGNPIC" jdbcType="VARCHAR" property="designpic" />
+    <result column="VIDEOPATH" jdbcType="VARCHAR" property="videopath" />
+    <result column="LINKID" jdbcType="VARCHAR" property="linkid" />
+    <result column="SECTID" jdbcType="VARCHAR" property="sectid" />
+    <result column="POSPIC4" jdbcType="VARCHAR" property="pospic4" />
+    <result column="MEMO1" jdbcType="VARCHAR" property="memo1" />
+    <result column="MEMO2" jdbcType="VARCHAR" property="memo2" />
+    <result column="MEMO3" jdbcType="VARCHAR" property="memo3" />
+    <result column="MEMO4" jdbcType="VARCHAR" property="memo4" />
+    <!--  <result column="MEMO5" jdbcType="VARCHAR" property="memo5" />-->
+    <result column="MAINTENANCEUNIT" jdbcType="VARCHAR" property="maintenanceunit" />
+    <result column="RAMPLANENO" jdbcType="DECIMAL" property="ramplaneno" />
+    <result column="BUSLANENO" jdbcType="DECIMAL" property="buslaneno" />
+    <result column="BICYCLELANENO" jdbcType="DECIMAL" property="bicyclelaneno" />
+    <result column="OTHERLANENO" jdbcType="DECIMAL" property="otherlaneno" />
+    <result column="ISALL" jdbcType="VARCHAR" property="isall" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DEVICEID, DEVICETYPE, DEVICENAME, ORGTYPE, ORGID, AREAID, ROADID, STAKENUM, DEVICEPOS, 
+    LONGITUDE, LATITUDE, DIRECTION, MASTERIP, INTERFACEIP, DEVICEIP, SHAFTSTAKENUM, SHAFTNAME, 
+    DEVICECOMPANY, QUEUELENGTHTHRESHOLD, STOPTIMETHRESHOLD, LOWSPEEDTHRESHOLD, TMINTERVAL, 
+    DEVICELOGINTERVAL, SYSLOGINTERVAL, STATE, NOTE, DEVICEMODEL, DEVICESOURCE, OPERATETIME, 
+    OPERATOR, WATERMARKNAME, GISADDRESS, POSHEIGHT, HORIZONTALANGLE, CABRAGEANGLE, LANENUM, 
+    COVERAGEAREA, GATEWAYS, DEVICEMAC, LIGHTNUM, DRIVINGDIRECTION, UPSHAFTSTAKE, UPSHAFTDIS, 
+    UPJUNCNAME, UPJUNCDIS, DOWNSHAFTSTAKE, DOWNSHAFTDIS, DOWNJUNCNAME, DOWNJUNCDIS, BUILDSTATE, 
+    CONVERGEBOX, CONVERGETIME, DEVICETRANSTIME, DEVICEREMOVETIME, CONSTRUCTIONUNIT, POLICEDEVID, 
+    OBJNAME, FTPPORT, FTPUSER, FTPPASSWORD, POSPIC1, CHECKPIC, DEVICERESOLUTION, DEVICENUM, 
+    DEVICEORIENTATION, DEVICEAREA, REGION, POSPIC2, ATTACHMENT, DESIGNPIC, VIDEOPATH, 
+    LINKID, SECTID, POSPIC4, MEMO1, MEMO2, MEMO3, MEMO4, MAINTENANCEUNIT, RAMPLANENO, 
+    BUSLANENO, BICYCLELANENO, OTHERLANENO, ISALL
+  </sql>
+   <sql id="Device_DeviceIp_ServiceIp_List">
+    DEVICEID, DEVICEIP,INTERFACEIP
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.hisense.nettyServer.model.entity.TsDevice">
+    select 
+    <include refid="Base_Column_List" /> 
+    from TS_DEVICE
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from TS_DEVICE
+    where DEVICEID = #{deviceid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.hisense.nettyServer.model.entity.TsDevice">
+    insert into TS_DEVICE (DEVICEID, DEVICETYPE, DEVICENAME, 
+      ORGTYPE, ORGID, AREAID, 
+      ROADID, STAKENUM, DEVICEPOS, 
+      LONGITUDE, LATITUDE, DIRECTION, 
+      MASTERIP, INTERFACEIP, DEVICEIP, 
+      SHAFTSTAKENUM, SHAFTNAME, DEVICECOMPANY, 
+      QUEUELENGTHTHRESHOLD, STOPTIMETHRESHOLD, 
+      LOWSPEEDTHRESHOLD, TMINTERVAL, DEVICELOGINTERVAL, 
+      SYSLOGINTERVAL, STATE, NOTE, 
+      DEVICEMODEL, DEVICESOURCE, OPERATETIME, 
+      OPERATOR, WATERMARKNAME, GISADDRESS, 
+      POSHEIGHT, HORIZONTALANGLE, CABRAGEANGLE, 
+      LANENUM, COVERAGEAREA, GATEWAYS, 
+      DEVICEMAC, LIGHTNUM, DRIVINGDIRECTION, 
+      UPSHAFTSTAKE, UPSHAFTDIS, UPJUNCNAME, 
+      UPJUNCDIS, DOWNSHAFTSTAKE, DOWNSHAFTDIS, 
+      DOWNJUNCNAME, DOWNJUNCDIS, BUILDSTATE, 
+      CONVERGEBOX, CONVERGETIME, DEVICETRANSTIME, 
+      DEVICEREMOVETIME, CONSTRUCTIONUNIT, POLICEDEVID, 
+      OBJNAME, FTPPORT, FTPUSER, 
+      FTPPASSWORD, POSPIC1, CHECKPIC, 
+      DEVICERESOLUTION, DEVICENUM, DEVICEORIENTATION, 
+      DEVICEAREA, REGION, POSPIC2, 
+      ATTACHMENT, DESIGNPIC, VIDEOPATH, 
+      LINKID, SECTID, POSPIC4, 
+      MEMO1, MEMO2, MEMO3, 
+      MEMO4, MEMO5, MAINTENANCEUNIT, 
+      RAMPLANENO, BUSLANENO, BICYCLELANENO, 
+      OTHERLANENO, ISALL)
+    values (#{deviceid,jdbcType=VARCHAR}, #{devicetype,jdbcType=VARCHAR}, #{devicename,jdbcType=VARCHAR}, 
+      #{orgtype,jdbcType=VARCHAR}, #{orgid,jdbcType=VARCHAR}, #{areaid,jdbcType=VARCHAR}, 
+      #{roadid,jdbcType=VARCHAR}, #{stakenum,jdbcType=VARCHAR}, #{devicepos,jdbcType=VARCHAR}, 
+      #{longitude,jdbcType=VARCHAR}, #{latitude,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, 
+      #{masterip,jdbcType=VARCHAR}, #{interfaceip,jdbcType=VARCHAR}, #{deviceip,jdbcType=VARCHAR}, 
+      #{shaftstakenum,jdbcType=VARCHAR}, #{shaftname,jdbcType=VARCHAR}, #{devicecompany,jdbcType=VARCHAR}, 
+      #{queuelengththreshold,jdbcType=DECIMAL}, #{stoptimethreshold,jdbcType=DECIMAL}, 
+      #{lowspeedthreshold,jdbcType=DECIMAL}, #{tminterval,jdbcType=DECIMAL}, #{deviceloginterval,jdbcType=DECIMAL}, 
+      #{sysloginterval,jdbcType=DECIMAL}, #{state,jdbcType=DECIMAL}, #{note,jdbcType=VARCHAR}, 
+      #{devicemodel,jdbcType=VARCHAR}, #{devicesource,jdbcType=VARCHAR}, #{operatetime,jdbcType=TIMESTAMP}, 
+      #{operator,jdbcType=VARCHAR}, #{watermarkname,jdbcType=VARCHAR}, #{gisaddress,jdbcType=VARCHAR}, 
+      #{posheight,jdbcType=DECIMAL}, #{horizontalangle,jdbcType=DECIMAL}, #{cabrageangle,jdbcType=DECIMAL}, 
+      #{lanenum,jdbcType=DECIMAL}, #{coveragearea,jdbcType=VARCHAR}, #{gateways,jdbcType=VARCHAR}, 
+      #{devicemac,jdbcType=VARCHAR}, #{lightnum,jdbcType=DECIMAL}, #{drivingdirection,jdbcType=VARCHAR}, 
+      #{upshaftstake,jdbcType=VARCHAR}, #{upshaftdis,jdbcType=DECIMAL}, #{upjuncname,jdbcType=VARCHAR}, 
+      #{upjuncdis,jdbcType=DECIMAL}, #{downshaftstake,jdbcType=VARCHAR}, #{downshaftdis,jdbcType=DECIMAL}, 
+      #{downjuncname,jdbcType=VARCHAR}, #{downjuncdis,jdbcType=DECIMAL}, #{buildstate,jdbcType=VARCHAR}, 
+      #{convergebox,jdbcType=VARCHAR}, #{convergetime,jdbcType=TIMESTAMP}, #{devicetranstime,jdbcType=TIMESTAMP}, 
+      #{deviceremovetime,jdbcType=TIMESTAMP}, #{constructionunit,jdbcType=VARCHAR}, #{policedevid,jdbcType=VARCHAR}, 
+      #{objname,jdbcType=VARCHAR}, #{ftpport,jdbcType=DECIMAL}, #{ftpuser,jdbcType=VARCHAR}, 
+      #{ftppassword,jdbcType=VARCHAR}, #{pospic1,jdbcType=VARCHAR}, #{checkpic,jdbcType=VARCHAR}, 
+      #{deviceresolution,jdbcType=VARCHAR}, #{devicenum,jdbcType=DECIMAL}, #{deviceorientation,jdbcType=VARCHAR}, 
+      #{devicearea,jdbcType=VARCHAR}, #{region,jdbcType=VARCHAR}, #{pospic2,jdbcType=VARCHAR}, 
+      #{attachment,jdbcType=VARCHAR}, #{designpic,jdbcType=VARCHAR}, #{videopath,jdbcType=VARCHAR}, 
+      #{linkid,jdbcType=VARCHAR}, #{sectid,jdbcType=VARCHAR}, #{pospic4,jdbcType=VARCHAR}, 
+      #{memo1,jdbcType=VARCHAR}, #{memo2,jdbcType=VARCHAR}, #{memo3,jdbcType=VARCHAR}, 
+      #{memo4,jdbcType=VARCHAR}, #{memo5,jdbcType=VARCHAR}, #{maintenanceunit,jdbcType=VARCHAR}, 
+      #{ramplaneno,jdbcType=DECIMAL}, #{buslaneno,jdbcType=DECIMAL}, #{bicyclelaneno,jdbcType=DECIMAL}, 
+      #{otherlaneno,jdbcType=DECIMAL}, #{isall,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hisense.nettyServer.model.entity.TsDevice">
+    insert into TS_DEVICE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceid != null">
+        DEVICEID,
+      </if>
+      <if test="devicetype != null">
+        DEVICETYPE,
+      </if>
+      <if test="devicename != null">
+        DEVICENAME,
+      </if>
+      <if test="orgtype != null">
+        ORGTYPE,
+      </if>
+      <if test="orgid != null">
+        ORGID,
+      </if>
+      <if test="areaid != null">
+        AREAID,
+      </if>
+      <if test="roadid != null">
+        ROADID,
+      </if>
+      <if test="stakenum != null">
+        STAKENUM,
+      </if>
+      <if test="devicepos != null">
+        DEVICEPOS,
+      </if>
+      <if test="longitude != null">
+        LONGITUDE,
+      </if>
+      <if test="latitude != null">
+        LATITUDE,
+      </if>
+      <if test="direction != null">
+        DIRECTION,
+      </if>
+      <if test="masterip != null">
+        MASTERIP,
+      </if>
+      <if test="interfaceip != null">
+        INTERFACEIP,
+      </if>
+      <if test="deviceip != null">
+        DEVICEIP,
+      </if>
+      <if test="shaftstakenum != null">
+        SHAFTSTAKENUM,
+      </if>
+      <if test="shaftname != null">
+        SHAFTNAME,
+      </if>
+      <if test="devicecompany != null">
+        DEVICECOMPANY,
+      </if>
+      <if test="queuelengththreshold != null">
+        QUEUELENGTHTHRESHOLD,
+      </if>
+      <if test="stoptimethreshold != null">
+        STOPTIMETHRESHOLD,
+      </if>
+      <if test="lowspeedthreshold != null">
+        LOWSPEEDTHRESHOLD,
+      </if>
+      <if test="tminterval != null">
+        TMINTERVAL,
+      </if>
+      <if test="deviceloginterval != null">
+        DEVICELOGINTERVAL,
+      </if>
+      <if test="sysloginterval != null">
+        SYSLOGINTERVAL,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+      <if test="note != null">
+        NOTE,
+      </if>
+      <if test="devicemodel != null">
+        DEVICEMODEL,
+      </if>
+      <if test="devicesource != null">
+        DEVICESOURCE,
+      </if>
+      <if test="operatetime != null">
+        OPERATETIME,
+      </if>
+      <if test="operator != null">
+        OPERATOR,
+      </if>
+      <if test="watermarkname != null">
+        WATERMARKNAME,
+      </if>
+      <if test="gisaddress != null">
+        GISADDRESS,
+      </if>
+      <if test="posheight != null">
+        POSHEIGHT,
+      </if>
+      <if test="horizontalangle != null">
+        HORIZONTALANGLE,
+      </if>
+      <if test="cabrageangle != null">
+        CABRAGEANGLE,
+      </if>
+      <if test="lanenum != null">
+        LANENUM,
+      </if>
+      <if test="coveragearea != null">
+        COVERAGEAREA,
+      </if>
+      <if test="gateways != null">
+        GATEWAYS,
+      </if>
+      <if test="devicemac != null">
+        DEVICEMAC,
+      </if>
+      <if test="lightnum != null">
+        LIGHTNUM,
+      </if>
+      <if test="drivingdirection != null">
+        DRIVINGDIRECTION,
+      </if>
+      <if test="upshaftstake != null">
+        UPSHAFTSTAKE,
+      </if>
+      <if test="upshaftdis != null">
+        UPSHAFTDIS,
+      </if>
+      <if test="upjuncname != null">
+        UPJUNCNAME,
+      </if>
+      <if test="upjuncdis != null">
+        UPJUNCDIS,
+      </if>
+      <if test="downshaftstake != null">
+        DOWNSHAFTSTAKE,
+      </if>
+      <if test="downshaftdis != null">
+        DOWNSHAFTDIS,
+      </if>
+      <if test="downjuncname != null">
+        DOWNJUNCNAME,
+      </if>
+      <if test="downjuncdis != null">
+        DOWNJUNCDIS,
+      </if>
+      <if test="buildstate != null">
+        BUILDSTATE,
+      </if>
+      <if test="convergebox != null">
+        CONVERGEBOX,
+      </if>
+      <if test="convergetime != null">
+        CONVERGETIME,
+      </if>
+      <if test="devicetranstime != null">
+        DEVICETRANSTIME,
+      </if>
+      <if test="deviceremovetime != null">
+        DEVICEREMOVETIME,
+      </if>
+      <if test="constructionunit != null">
+        CONSTRUCTIONUNIT,
+      </if>
+      <if test="policedevid != null">
+        POLICEDEVID,
+      </if>
+      <if test="objname != null">
+        OBJNAME,
+      </if>
+      <if test="ftpport != null">
+        FTPPORT,
+      </if>
+      <if test="ftpuser != null">
+        FTPUSER,
+      </if>
+      <if test="ftppassword != null">
+        FTPPASSWORD,
+      </if>
+      <if test="pospic1 != null">
+        POSPIC1,
+      </if>
+      <if test="checkpic != null">
+        CHECKPIC,
+      </if>
+      <if test="deviceresolution != null">
+        DEVICERESOLUTION,
+      </if>
+      <if test="devicenum != null">
+        DEVICENUM,
+      </if>
+      <if test="deviceorientation != null">
+        DEVICEORIENTATION,
+      </if>
+      <if test="devicearea != null">
+        DEVICEAREA,
+      </if>
+      <if test="region != null">
+        REGION,
+      </if>
+      <if test="pospic2 != null">
+        POSPIC2,
+      </if>
+      <if test="attachment != null">
+        ATTACHMENT,
+      </if>
+      <if test="designpic != null">
+        DESIGNPIC,
+      </if>
+      <if test="videopath != null">
+        VIDEOPATH,
+      </if>
+      <if test="linkid != null">
+        LINKID,
+      </if>
+      <if test="sectid != null">
+        SECTID,
+      </if>
+      <if test="pospic4 != null">
+        POSPIC4,
+      </if>
+      <if test="memo1 != null">
+        MEMO1,
+      </if>
+      <if test="memo2 != null">
+        MEMO2,
+      </if>
+      <if test="memo3 != null">
+        MEMO3,
+      </if>
+      <if test="memo4 != null">
+        MEMO4,
+      </if>
+      <if test="memo5 != null">
+        MEMO5,
+      </if>
+      <if test="maintenanceunit != null">
+        MAINTENANCEUNIT,
+      </if>
+      <if test="ramplaneno != null">
+        RAMPLANENO,
+      </if>
+      <if test="buslaneno != null">
+        BUSLANENO,
+      </if>
+      <if test="bicyclelaneno != null">
+        BICYCLELANENO,
+      </if>
+      <if test="otherlaneno != null">
+        OTHERLANENO,
+      </if>
+      <if test="isall != null">
+        ISALL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceid != null">
+        #{deviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="devicetype != null">
+        #{devicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="devicename != null">
+        #{devicename,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtype != null">
+        #{orgtype,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null">
+        #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="areaid != null">
+        #{areaid,jdbcType=VARCHAR},
+      </if>
+      <if test="roadid != null">
+        #{roadid,jdbcType=VARCHAR},
+      </if>
+      <if test="stakenum != null">
+        #{stakenum,jdbcType=VARCHAR},
+      </if>
+      <if test="devicepos != null">
+        #{devicepos,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null">
+        #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="masterip != null">
+        #{masterip,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceip != null">
+        #{interfaceip,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceip != null">
+        #{deviceip,jdbcType=VARCHAR},
+      </if>
+      <if test="shaftstakenum != null">
+        #{shaftstakenum,jdbcType=VARCHAR},
+      </if>
+      <if test="shaftname != null">
+        #{shaftname,jdbcType=VARCHAR},
+      </if>
+      <if test="devicecompany != null">
+        #{devicecompany,jdbcType=VARCHAR},
+      </if>
+      <if test="queuelengththreshold != null">
+        #{queuelengththreshold,jdbcType=DECIMAL},
+      </if>
+      <if test="stoptimethreshold != null">
+        #{stoptimethreshold,jdbcType=DECIMAL},
+      </if>
+      <if test="lowspeedthreshold != null">
+        #{lowspeedthreshold,jdbcType=DECIMAL},
+      </if>
+      <if test="tminterval != null">
+        #{tminterval,jdbcType=DECIMAL},
+      </if>
+      <if test="deviceloginterval != null">
+        #{deviceloginterval,jdbcType=DECIMAL},
+      </if>
+      <if test="sysloginterval != null">
+        #{sysloginterval,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=DECIMAL},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="devicemodel != null">
+        #{devicemodel,jdbcType=VARCHAR},
+      </if>
+      <if test="devicesource != null">
+        #{devicesource,jdbcType=VARCHAR},
+      </if>
+      <if test="operatetime != null">
+        #{operatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="watermarkname != null">
+        #{watermarkname,jdbcType=VARCHAR},
+      </if>
+      <if test="gisaddress != null">
+        #{gisaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="posheight != null">
+        #{posheight,jdbcType=DECIMAL},
+      </if>
+      <if test="horizontalangle != null">
+        #{horizontalangle,jdbcType=DECIMAL},
+      </if>
+      <if test="cabrageangle != null">
+        #{cabrageangle,jdbcType=DECIMAL},
+      </if>
+      <if test="lanenum != null">
+        #{lanenum,jdbcType=DECIMAL},
+      </if>
+      <if test="coveragearea != null">
+        #{coveragearea,jdbcType=VARCHAR},
+      </if>
+      <if test="gateways != null">
+        #{gateways,jdbcType=VARCHAR},
+      </if>
+      <if test="devicemac != null">
+        #{devicemac,jdbcType=VARCHAR},
+      </if>
+      <if test="lightnum != null">
+        #{lightnum,jdbcType=DECIMAL},
+      </if>
+      <if test="drivingdirection != null">
+        #{drivingdirection,jdbcType=VARCHAR},
+      </if>
+      <if test="upshaftstake != null">
+        #{upshaftstake,jdbcType=VARCHAR},
+      </if>
+      <if test="upshaftdis != null">
+        #{upshaftdis,jdbcType=DECIMAL},
+      </if>
+      <if test="upjuncname != null">
+        #{upjuncname,jdbcType=VARCHAR},
+      </if>
+      <if test="upjuncdis != null">
+        #{upjuncdis,jdbcType=DECIMAL},
+      </if>
+      <if test="downshaftstake != null">
+        #{downshaftstake,jdbcType=VARCHAR},
+      </if>
+      <if test="downshaftdis != null">
+        #{downshaftdis,jdbcType=DECIMAL},
+      </if>
+      <if test="downjuncname != null">
+        #{downjuncname,jdbcType=VARCHAR},
+      </if>
+      <if test="downjuncdis != null">
+        #{downjuncdis,jdbcType=DECIMAL},
+      </if>
+      <if test="buildstate != null">
+        #{buildstate,jdbcType=VARCHAR},
+      </if>
+      <if test="convergebox != null">
+        #{convergebox,jdbcType=VARCHAR},
+      </if>
+      <if test="convergetime != null">
+        #{convergetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="devicetranstime != null">
+        #{devicetranstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceremovetime != null">
+        #{deviceremovetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="constructionunit != null">
+        #{constructionunit,jdbcType=VARCHAR},
+      </if>
+      <if test="policedevid != null">
+        #{policedevid,jdbcType=VARCHAR},
+      </if>
+      <if test="objname != null">
+        #{objname,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpport != null">
+        #{ftpport,jdbcType=DECIMAL},
+      </if>
+      <if test="ftpuser != null">
+        #{ftpuser,jdbcType=VARCHAR},
+      </if>
+      <if test="ftppassword != null">
+        #{ftppassword,jdbcType=VARCHAR},
+      </if>
+      <if test="pospic1 != null">
+        #{pospic1,jdbcType=VARCHAR},
+      </if>
+      <if test="checkpic != null">
+        #{checkpic,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceresolution != null">
+        #{deviceresolution,jdbcType=VARCHAR},
+      </if>
+      <if test="devicenum != null">
+        #{devicenum,jdbcType=DECIMAL},
+      </if>
+      <if test="deviceorientation != null">
+        #{deviceorientation,jdbcType=VARCHAR},
+      </if>
+      <if test="devicearea != null">
+        #{devicearea,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="pospic2 != null">
+        #{pospic2,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null">
+        #{attachment,jdbcType=VARCHAR},
+      </if>
+      <if test="designpic != null">
+        #{designpic,jdbcType=VARCHAR},
+      </if>
+      <if test="videopath != null">
+        #{videopath,jdbcType=VARCHAR},
+      </if>
+      <if test="linkid != null">
+        #{linkid,jdbcType=VARCHAR},
+      </if>
+      <if test="sectid != null">
+        #{sectid,jdbcType=VARCHAR},
+      </if>
+      <if test="pospic4 != null">
+        #{pospic4,jdbcType=VARCHAR},
+      </if>
+      <if test="memo1 != null">
+        #{memo1,jdbcType=VARCHAR},
+      </if>
+      <if test="memo2 != null">
+        #{memo2,jdbcType=VARCHAR},
+      </if>
+      <if test="memo3 != null">
+        #{memo3,jdbcType=VARCHAR},
+      </if>
+      <if test="memo4 != null">
+        #{memo4,jdbcType=VARCHAR},
+      </if>
+      <if test="memo5 != null">
+        #{memo5,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceunit != null">
+        #{maintenanceunit,jdbcType=VARCHAR},
+      </if>
+      <if test="ramplaneno != null">
+        #{ramplaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="buslaneno != null">
+        #{buslaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="bicyclelaneno != null">
+        #{bicyclelaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="otherlaneno != null">
+        #{otherlaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="isall != null">
+        #{isall,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hisense.nettyServer.model.entity.TsDevice">
+    update TS_DEVICE
+    <set>
+      <if test="devicetype != null">
+        DEVICETYPE = #{devicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="devicename != null">
+        DEVICENAME = #{devicename,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtype != null">
+        ORGTYPE = #{orgtype,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null">
+        ORGID = #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="areaid != null">
+        AREAID = #{areaid,jdbcType=VARCHAR},
+      </if>
+      <if test="roadid != null">
+        ROADID = #{roadid,jdbcType=VARCHAR},
+      </if>
+      <if test="stakenum != null">
+        STAKENUM = #{stakenum,jdbcType=VARCHAR},
+      </if>
+      <if test="devicepos != null">
+        DEVICEPOS = #{devicepos,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null">
+        LONGITUDE = #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        LATITUDE = #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null">
+        DIRECTION = #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="masterip != null">
+        MASTERIP = #{masterip,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceip != null">
+        INTERFACEIP = #{interfaceip,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceip != null">
+        DEVICEIP = #{deviceip,jdbcType=VARCHAR},
+      </if>
+      <if test="shaftstakenum != null">
+        SHAFTSTAKENUM = #{shaftstakenum,jdbcType=VARCHAR},
+      </if>
+      <if test="shaftname != null">
+        SHAFTNAME = #{shaftname,jdbcType=VARCHAR},
+      </if>
+      <if test="devicecompany != null">
+        DEVICECOMPANY = #{devicecompany,jdbcType=VARCHAR},
+      </if>
+      <if test="queuelengththreshold != null">
+        QUEUELENGTHTHRESHOLD = #{queuelengththreshold,jdbcType=DECIMAL},
+      </if>
+      <if test="stoptimethreshold != null">
+        STOPTIMETHRESHOLD = #{stoptimethreshold,jdbcType=DECIMAL},
+      </if>
+      <if test="lowspeedthreshold != null">
+        LOWSPEEDTHRESHOLD = #{lowspeedthreshold,jdbcType=DECIMAL},
+      </if>
+      <if test="tminterval != null">
+        TMINTERVAL = #{tminterval,jdbcType=DECIMAL},
+      </if>
+      <if test="deviceloginterval != null">
+        DEVICELOGINTERVAL = #{deviceloginterval,jdbcType=DECIMAL},
+      </if>
+      <if test="sysloginterval != null">
+        SYSLOGINTERVAL = #{sysloginterval,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=DECIMAL},
+      </if>
+      <if test="note != null">
+        NOTE = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="devicemodel != null">
+        DEVICEMODEL = #{devicemodel,jdbcType=VARCHAR},
+      </if>
+      <if test="devicesource != null">
+        DEVICESOURCE = #{devicesource,jdbcType=VARCHAR},
+      </if>
+      <if test="operatetime != null">
+        OPERATETIME = #{operatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        OPERATOR = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="watermarkname != null">
+        WATERMARKNAME = #{watermarkname,jdbcType=VARCHAR},
+      </if>
+      <if test="gisaddress != null">
+        GISADDRESS = #{gisaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="posheight != null">
+        POSHEIGHT = #{posheight,jdbcType=DECIMAL},
+      </if>
+      <if test="horizontalangle != null">
+        HORIZONTALANGLE = #{horizontalangle,jdbcType=DECIMAL},
+      </if>
+      <if test="cabrageangle != null">
+        CABRAGEANGLE = #{cabrageangle,jdbcType=DECIMAL},
+      </if>
+      <if test="lanenum != null">
+        LANENUM = #{lanenum,jdbcType=DECIMAL},
+      </if>
+      <if test="coveragearea != null">
+        COVERAGEAREA = #{coveragearea,jdbcType=VARCHAR},
+      </if>
+      <if test="gateways != null">
+        GATEWAYS = #{gateways,jdbcType=VARCHAR},
+      </if>
+      <if test="devicemac != null">
+        DEVICEMAC = #{devicemac,jdbcType=VARCHAR},
+      </if>
+      <if test="lightnum != null">
+        LIGHTNUM = #{lightnum,jdbcType=DECIMAL},
+      </if>
+      <if test="drivingdirection != null">
+        DRIVINGDIRECTION = #{drivingdirection,jdbcType=VARCHAR},
+      </if>
+      <if test="upshaftstake != null">
+        UPSHAFTSTAKE = #{upshaftstake,jdbcType=VARCHAR},
+      </if>
+      <if test="upshaftdis != null">
+        UPSHAFTDIS = #{upshaftdis,jdbcType=DECIMAL},
+      </if>
+      <if test="upjuncname != null">
+        UPJUNCNAME = #{upjuncname,jdbcType=VARCHAR},
+      </if>
+      <if test="upjuncdis != null">
+        UPJUNCDIS = #{upjuncdis,jdbcType=DECIMAL},
+      </if>
+      <if test="downshaftstake != null">
+        DOWNSHAFTSTAKE = #{downshaftstake,jdbcType=VARCHAR},
+      </if>
+      <if test="downshaftdis != null">
+        DOWNSHAFTDIS = #{downshaftdis,jdbcType=DECIMAL},
+      </if>
+      <if test="downjuncname != null">
+        DOWNJUNCNAME = #{downjuncname,jdbcType=VARCHAR},
+      </if>
+      <if test="downjuncdis != null">
+        DOWNJUNCDIS = #{downjuncdis,jdbcType=DECIMAL},
+      </if>
+      <if test="buildstate != null">
+        BUILDSTATE = #{buildstate,jdbcType=VARCHAR},
+      </if>
+      <if test="convergebox != null">
+        CONVERGEBOX = #{convergebox,jdbcType=VARCHAR},
+      </if>
+      <if test="convergetime != null">
+        CONVERGETIME = #{convergetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="devicetranstime != null">
+        DEVICETRANSTIME = #{devicetranstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceremovetime != null">
+        DEVICEREMOVETIME = #{deviceremovetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="constructionunit != null">
+        CONSTRUCTIONUNIT = #{constructionunit,jdbcType=VARCHAR},
+      </if>
+      <if test="policedevid != null">
+        POLICEDEVID = #{policedevid,jdbcType=VARCHAR},
+      </if>
+      <if test="objname != null">
+        OBJNAME = #{objname,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpport != null">
+        FTPPORT = #{ftpport,jdbcType=DECIMAL},
+      </if>
+      <if test="ftpuser != null">
+        FTPUSER = #{ftpuser,jdbcType=VARCHAR},
+      </if>
+      <if test="ftppassword != null">
+        FTPPASSWORD = #{ftppassword,jdbcType=VARCHAR},
+      </if>
+      <if test="pospic1 != null">
+        POSPIC1 = #{pospic1,jdbcType=VARCHAR},
+      </if>
+      <if test="checkpic != null">
+        CHECKPIC = #{checkpic,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceresolution != null">
+        DEVICERESOLUTION = #{deviceresolution,jdbcType=VARCHAR},
+      </if>
+      <if test="devicenum != null">
+        DEVICENUM = #{devicenum,jdbcType=DECIMAL},
+      </if>
+      <if test="deviceorientation != null">
+        DEVICEORIENTATION = #{deviceorientation,jdbcType=VARCHAR},
+      </if>
+      <if test="devicearea != null">
+        DEVICEAREA = #{devicearea,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        REGION = #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="pospic2 != null">
+        POSPIC2 = #{pospic2,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null">
+        ATTACHMENT = #{attachment,jdbcType=VARCHAR},
+      </if>
+      <if test="designpic != null">
+        DESIGNPIC = #{designpic,jdbcType=VARCHAR},
+      </if>
+      <if test="videopath != null">
+        VIDEOPATH = #{videopath,jdbcType=VARCHAR},
+      </if>
+      <if test="linkid != null">
+        LINKID = #{linkid,jdbcType=VARCHAR},
+      </if>
+      <if test="sectid != null">
+        SECTID = #{sectid,jdbcType=VARCHAR},
+      </if>
+      <if test="pospic4 != null">
+        POSPIC4 = #{pospic4,jdbcType=VARCHAR},
+      </if>
+      <if test="memo1 != null">
+        MEMO1 = #{memo1,jdbcType=VARCHAR},
+      </if>
+      <if test="memo2 != null">
+        MEMO2 = #{memo2,jdbcType=VARCHAR},
+      </if>
+      <if test="memo3 != null">
+        MEMO3 = #{memo3,jdbcType=VARCHAR},
+      </if>
+      <if test="memo4 != null">
+        MEMO4 = #{memo4,jdbcType=VARCHAR},
+      </if>
+      <if test="memo5 != null">
+        MEMO5 = #{memo5,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceunit != null">
+        MAINTENANCEUNIT = #{maintenanceunit,jdbcType=VARCHAR},
+      </if>
+      <if test="ramplaneno != null">
+        RAMPLANENO = #{ramplaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="buslaneno != null">
+        BUSLANENO = #{buslaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="bicyclelaneno != null">
+        BICYCLELANENO = #{bicyclelaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="otherlaneno != null">
+        OTHERLANENO = #{otherlaneno,jdbcType=DECIMAL},
+      </if>
+      <if test="isall != null">
+        ISALL = #{isall,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DEVICEID = #{deviceid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hisense.nettyServer.model.entity.TsDevice">
+    update TS_DEVICE
+    set DEVICETYPE = #{devicetype,jdbcType=VARCHAR},
+      DEVICENAME = #{devicename,jdbcType=VARCHAR},
+      ORGTYPE = #{orgtype,jdbcType=VARCHAR},
+      ORGID = #{orgid,jdbcType=VARCHAR},
+      AREAID = #{areaid,jdbcType=VARCHAR},
+      ROADID = #{roadid,jdbcType=VARCHAR},
+      STAKENUM = #{stakenum,jdbcType=VARCHAR},
+      DEVICEPOS = #{devicepos,jdbcType=VARCHAR},
+      LONGITUDE = #{longitude,jdbcType=VARCHAR},
+      LATITUDE = #{latitude,jdbcType=VARCHAR},
+      DIRECTION = #{direction,jdbcType=VARCHAR},
+      MASTERIP = #{masterip,jdbcType=VARCHAR},
+      INTERFACEIP = #{interfaceip,jdbcType=VARCHAR},
+      DEVICEIP = #{deviceip,jdbcType=VARCHAR},
+      SHAFTSTAKENUM = #{shaftstakenum,jdbcType=VARCHAR},
+      SHAFTNAME = #{shaftname,jdbcType=VARCHAR},
+      DEVICECOMPANY = #{devicecompany,jdbcType=VARCHAR},
+      QUEUELENGTHTHRESHOLD = #{queuelengththreshold,jdbcType=DECIMAL},
+      STOPTIMETHRESHOLD = #{stoptimethreshold,jdbcType=DECIMAL},
+      LOWSPEEDTHRESHOLD = #{lowspeedthreshold,jdbcType=DECIMAL},
+      TMINTERVAL = #{tminterval,jdbcType=DECIMAL},
+      DEVICELOGINTERVAL = #{deviceloginterval,jdbcType=DECIMAL},
+      SYSLOGINTERVAL = #{sysloginterval,jdbcType=DECIMAL},
+      STATE = #{state,jdbcType=DECIMAL},
+      NOTE = #{note,jdbcType=VARCHAR},
+      DEVICEMODEL = #{devicemodel,jdbcType=VARCHAR},
+      DEVICESOURCE = #{devicesource,jdbcType=VARCHAR},
+      OPERATETIME = #{operatetime,jdbcType=TIMESTAMP},
+      OPERATOR = #{operator,jdbcType=VARCHAR},
+      WATERMARKNAME = #{watermarkname,jdbcType=VARCHAR},
+      GISADDRESS = #{gisaddress,jdbcType=VARCHAR},
+      POSHEIGHT = #{posheight,jdbcType=DECIMAL},
+      HORIZONTALANGLE = #{horizontalangle,jdbcType=DECIMAL},
+      CABRAGEANGLE = #{cabrageangle,jdbcType=DECIMAL},
+      LANENUM = #{lanenum,jdbcType=DECIMAL},
+      COVERAGEAREA = #{coveragearea,jdbcType=VARCHAR},
+      GATEWAYS = #{gateways,jdbcType=VARCHAR},
+      DEVICEMAC = #{devicemac,jdbcType=VARCHAR},
+      LIGHTNUM = #{lightnum,jdbcType=DECIMAL},
+      DRIVINGDIRECTION = #{drivingdirection,jdbcType=VARCHAR},
+      UPSHAFTSTAKE = #{upshaftstake,jdbcType=VARCHAR},
+      UPSHAFTDIS = #{upshaftdis,jdbcType=DECIMAL},
+      UPJUNCNAME = #{upjuncname,jdbcType=VARCHAR},
+      UPJUNCDIS = #{upjuncdis,jdbcType=DECIMAL},
+      DOWNSHAFTSTAKE = #{downshaftstake,jdbcType=VARCHAR},
+      DOWNSHAFTDIS = #{downshaftdis,jdbcType=DECIMAL},
+      DOWNJUNCNAME = #{downjuncname,jdbcType=VARCHAR},
+      DOWNJUNCDIS = #{downjuncdis,jdbcType=DECIMAL},
+      BUILDSTATE = #{buildstate,jdbcType=VARCHAR},
+      CONVERGEBOX = #{convergebox,jdbcType=VARCHAR},
+      CONVERGETIME = #{convergetime,jdbcType=TIMESTAMP},
+      DEVICETRANSTIME = #{devicetranstime,jdbcType=TIMESTAMP},
+      DEVICEREMOVETIME = #{deviceremovetime,jdbcType=TIMESTAMP},
+      CONSTRUCTIONUNIT = #{constructionunit,jdbcType=VARCHAR},
+      POLICEDEVID = #{policedevid,jdbcType=VARCHAR},
+      OBJNAME = #{objname,jdbcType=VARCHAR},
+      FTPPORT = #{ftpport,jdbcType=DECIMAL},
+      FTPUSER = #{ftpuser,jdbcType=VARCHAR},
+      FTPPASSWORD = #{ftppassword,jdbcType=VARCHAR},
+      POSPIC1 = #{pospic1,jdbcType=VARCHAR},
+      CHECKPIC = #{checkpic,jdbcType=VARCHAR},
+      DEVICERESOLUTION = #{deviceresolution,jdbcType=VARCHAR},
+      DEVICENUM = #{devicenum,jdbcType=DECIMAL},
+      DEVICEORIENTATION = #{deviceorientation,jdbcType=VARCHAR},
+      DEVICEAREA = #{devicearea,jdbcType=VARCHAR},
+      REGION = #{region,jdbcType=VARCHAR},
+      POSPIC2 = #{pospic2,jdbcType=VARCHAR},
+      ATTACHMENT = #{attachment,jdbcType=VARCHAR},
+      DESIGNPIC = #{designpic,jdbcType=VARCHAR},
+      VIDEOPATH = #{videopath,jdbcType=VARCHAR},
+      LINKID = #{linkid,jdbcType=VARCHAR},
+      SECTID = #{sectid,jdbcType=VARCHAR},
+      POSPIC4 = #{pospic4,jdbcType=VARCHAR},
+      MEMO1 = #{memo1,jdbcType=VARCHAR},
+      MEMO2 = #{memo2,jdbcType=VARCHAR},
+      MEMO3 = #{memo3,jdbcType=VARCHAR},
+      MEMO4 = #{memo4,jdbcType=VARCHAR},
+      MEMO5 = #{memo5,jdbcType=VARCHAR},
+      MAINTENANCEUNIT = #{maintenanceunit,jdbcType=VARCHAR},
+      RAMPLANENO = #{ramplaneno,jdbcType=DECIMAL},
+      BUSLANENO = #{buslaneno,jdbcType=DECIMAL},
+      BICYCLELANENO = #{bicyclelaneno,jdbcType=DECIMAL},
+      OTHERLANENO = #{otherlaneno,jdbcType=DECIMAL},
+      ISALL = #{isall,jdbcType=VARCHAR}
+    where DEVICEID = #{deviceid,jdbcType=VARCHAR}
+  </update>
+</mapper>

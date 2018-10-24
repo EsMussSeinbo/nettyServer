@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	
+	<!-- Task -->
+	<bean id="fileScanDeleteTask" class="com.hisense.nettyServer.support.job.FileScanDeleteTask"/>
+	
+	<!-- JobDetail -->
+	<bean id="fileScanDeletJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="name" value="fileScanDelet_job_detail"/>
+	    <property name="group" value="fileScanDelet_job_detail_group"/>
+	    <property name="concurrent" value="false"/>
+	    <property name="targetObject">
+	        <ref bean="fileScanDeleteTask"/>
+	    </property>
+	    <property name="targetMethod">
+	        <value>run</value>
+	    </property>
+	</bean>
+	
+	<!--  JobTrigger -->
+	<bean id="fileScanDeletJobTrigger"
+	      class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	    <property name="name" value="fileScanDelet_job_trigger"/>
+	    <property name="group" value="fileScanDelet_job_trigger_group"/>
+	    <property name="jobDetail">
+	        <ref bean="fileScanDeletJobDetail" />
+	    </property>
+	    <property name="cronExpression">
+	        <value>0/10 * * * * ?</value>   
+	    </property>
+	</bean>
+	
+	<!-- 调度工厂 -->
+	<bean id="quartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="triggers">
+	        <list>
+	            <ref bean="fileScanDeletJobTrigger"/>
+	            <!-- 可开启多个任务 -->
+	            <!--<ref bean="realTimeKpiEffectAutoCheckJobTrigger"/>-->
+	        </list>
+	    </property>
+	</bean>
+</beans>

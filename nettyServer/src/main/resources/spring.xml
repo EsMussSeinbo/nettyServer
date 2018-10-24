@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+	
+	<!-- 启动包扫描功能，以便注册带有Controller、Service、repository、Component等注解的类成为spring的bean -->
+	<context:component-scan base-package="com.hisense.nettyServer.*"></context:component-scan>
+	
+	 <!-- 数据源 -->
+	<import resource="spring-datasource-basic.xml"/>
+	
+	<import resource="spring-redis.xml"/>
+	
+	<!-- 只是注入到spring容器下 ,不能在新建的main方法下调用 -->
+	<bean id="springContextHolder" class="com.hisense.nettyServer.support.util.SpringContextHolder" />
+	
+	<!-- 调度器 -->
+	<!--  <import resource="spring-quartz.xml"/>-->
+	
+
+</beans>
